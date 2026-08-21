@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Drag Translate",
+  "version": "1.0.0",
+  "description": "드래그한 영어 문장을 Google 번역을 통해 한국어로 보여줍니다.",
+  "icons": {
+    "16": "icons/inactive16.png",
+    "32": "icons/inactive32.png",
+    "128": "icons/inactive128.png"
+  },
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Drag Translate: 꺼짐",
+    "default_icon": {
+      "16": "icons/inactive16.png",
+      "32": "icons/inactive32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

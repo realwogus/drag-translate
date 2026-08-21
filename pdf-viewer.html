@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag Translate PDF Viewer</title>
+    <link rel="stylesheet" href="pdf-viewer.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="title-wrap">
+        <span class="logo">가A</span>
+        <strong id="documentTitle">PDF 불러오는 중...</strong>
+      </div>
+      <div class="toolbar-actions">
+        <span id="pageCount"></span>
+        <a id="originalLink" target="_blank" rel="noreferrer">원본 PDF</a>
+      </div>
+    </header>
+    <div id="progress" class="progress"><span></span></div>
+    <main id="viewer" class="viewer" aria-live="polite"></main>
+    <div id="error" class="error" hidden>
+      <strong>PDF를 열지 못했습니다.</strong>
+      <p id="errorMessage">주소 또는 네트워크 상태를 확인해 주세요.</p>
+    </div>
+    <script type="module" src="pdf-viewer.js"></script>
+    <script src="content.js"></script>
+  </body>
+</html>
